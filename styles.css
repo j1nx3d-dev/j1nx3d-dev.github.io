@@ -116,43 +116,23 @@ body {
     margin: 0 auto;
 }
 
-/* Boutons flottants */
+/* Style des boutons flottants */
 #scrollToTopBtn, #goToHomeBtn {
-    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgba(187, 134, 252, 0.8); /* Violet transparent */
+    background-color: #333;
     color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
     font-size: 24px;
-    text-align: center;
-    line-height: 50px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* Bouton maison (avec fond différent) */
-#goToHomeBtn {
-    background-color: rgba(3, 218, 198, 0.8);
-    right: 80px;
-}
-
-/* Effet au survol */
-#scrollToTopBtn:hover, #goToHomeBtn:hover {
-    background-color: rgba(187, 134, 252, 1); /* Passage au violet plein */
-}
-
-/* Apparition progressive des boutons */
-#scrollToTopBtn, #goToHomeBtn {
-    opacity: 0;
+    opacity: 0; /* Initialement caché */
     transition: opacity 0.3s ease;
+    z-index: 1000; /* Pour s'assurer que les boutons sont au-dessus du contenu */
 }
 
-/* Apparition quand ils sont activés */
+/* Classe 'show' qui rend les boutons visibles */
 #scrollToTopBtn.show, #goToHomeBtn.show {
-    opacity: 1;
+    opacity: 1; /* Affiche les boutons */
 }

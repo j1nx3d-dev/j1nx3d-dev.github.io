@@ -1,39 +1,28 @@
-// scripts.js
-
-// Fonction pour afficher / cacher le menu burger
-function toggleMenu() {
-    var menu = document.getElementById('navLinksMobile');
-    menu.classList.toggle('active');  // Affiche ou cache le menu mobile
-    var burger = document.querySelector('.burger-menu');
-    burger.classList.toggle('active');  // Modifie l'icône du menu burger
-}
-
-// Fonction pour remonter en haut avec une animation fluide
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Fonction pour aller à la page d'accueil
-function goToHome() {
-    window.location.href = '/';  // Remplace par l'URL de la page d'accueil
-}
-
-// Affichage des boutons au défilement
+// Fonction pour afficher ou masquer les boutons flottants
 window.onscroll = function() {
-    var scrollToTopBtn = document.getElementById('scrollToTopBtn');
-    var goToHomeBtn = document.getElementById('goToHomeBtn');
-
-    // Bouton "Remonter en haut"
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        scrollToTopBtn.classList.add('show');  // Affiche le bouton "Remonter"
-    } else {
-        scrollToTopBtn.classList.remove('show');  // Cache le bouton "Remonter"
-    }
-
-    // Bouton "Retour à la maison"
+    // Vérifie la position du scroll
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        goToHomeBtn.classList.add('show');  // Affiche le bouton "Retour à l'accueil"
+        // Si l'utilisateur a scrollé plus de 100px, on affiche les boutons
+        console.log("Scrolling down, buttons should appear!");
+        document.getElementById("scrollToTopBtn").classList.add("show");
+        document.getElementById("goToHomeBtn").classList.add("show");
     } else {
-        goToHomeBtn.classList.remove('show');  // Cache le bouton "Retour à l'accueil"
+        // Si l'utilisateur est tout en haut de la page, on cache les boutons
+        console.log("Top of the page, buttons should disappear.");
+        document.getElementById("scrollToTopBtn").classList.remove("show");
+        document.getElementById("goToHomeBtn").classList.remove("show");
     }
 };
+
+// Fonction pour remonter en haut de la page
+function scrollToTop() {
+    document.body.scrollTop = 0; // Pour Safari
+    document.documentElement.scrollTop = 0; // Pour les autres navigateurs
+    console.log("Scrolling back to top!");
+}
+
+// Fonction pour revenir à la page d'accueil (ou autre action)
+function goToHomePage() {
+    window.location.href = "index.html"; // Remplace par l'URL de ta page d'accueil
+    console.log("Redirecting to home page!");
+}
