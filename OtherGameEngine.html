@@ -4,153 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>"J1nx3d Dev: From Glitch to Feature"</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #E0E0E0;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .header {
-            background-color: #1F1F1F;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .header h1 {
-            color: #FFFFFF;
-        }
-
-        /* Menu burger (affichage sur petit écran) */
-        .burger-menu {
-            display: none;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-        }
-
-        .burger-menu div {
-            width: 35px;
-            height: 5px;
-            margin: 6px 0;
-            background-color: #BB86FC;
-            transition: 0.4s;
-        }
-
-        /* Menu pour les grands écrans */
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: #BB86FC;
-            font-size: 18px;
-            text-decoration: none;
-            padding: 10px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            background-color: #3700B3;
-        }
-
-        /* Menu pour les petits écrans */
-        .nav-links-mobile {
-            display: none;
-            background-color: #1F1F1F;
-            padding: 15px;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-        }
-
-        .nav-links-mobile a {
-            display: block;
-            color: #BB86FC;
-            font-size: 18px;
-            text-decoration: none;
-            padding: 10px;
-            transition: 0.3s;
-        }
-
-        .nav-links-mobile a:hover {
-            background-color: #3700B3;
-        }
-
-        /* Transformation du menu burger quand actif */
-        .burger-menu.active div:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .burger-menu.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .burger-menu.active div:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        /* Affichage du menu burger et contenu en version mobile */
-        @media (max-width: 768px) {
-            .burger-menu {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-links-mobile.active {
-                display: block;
-            }
-        }
-
-        /* Styles de contenu principal */
-        .content-wrapper {
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .description {
-            margin-bottom: 40px;
-        }
-
-        #scrollToTop, #goToHome {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #BB86FC;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        #scrollToTop:hover, #goToHome:hover {
-            background-color: #3700B3;
-        }
-
-        #goToHome {
-            background-color: #03DAC6;
-            right: 100px; /* Espacement pour ne pas chevaucher le bouton de scroll */
-        }
-
-    </style>
+    <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -167,7 +22,7 @@
     <!-- Liens pour le menu mobile -->
     <div class="nav-links-mobile" id="navLinksMobile">
         <a href="https://github.com/j1nx3d-dev" target="_blank">GitHub Repos</a>
-        <a href="UnityEngineMeca.html">Unity Engine Mechanics</a>
+        <a href="UnityEngineMeca.html">Unity Engine</a>
         <a href="OtherGameEngine.html">Other Game Engine</a>
         <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">LinkedIn</a>
     </div>
@@ -175,7 +30,7 @@
     <!-- Liens pour le menu classique -->
     <div class="nav-links">
         <a href="https://github.com/j1nx3d-dev" target="_blank">GitHub Repos</a>
-        <a href="UnityEngineMeca.html">Unity Engine Mechanics</a>
+        <a href="UnityEngineMeca.html">Unity Engine</a>
         <a href="OtherGameEngine.html">Other Game Engine</a>
         <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">LinkedIn</a>
     </div>
