@@ -1,6 +1,10 @@
 /* Styles généraux du corps de la page */
 body {
     background-color: #121212; /* Fond sombre pour toute la page */
+    background-image: url('bodybgimg.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: repeat-y;
     color: #E0E0E0; /* Texte clair pour contraster avec le fond sombre */
     font-family: Arial, sans-serif;
     margin: 0;
