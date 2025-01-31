@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code & Créativité par Kevin</title>
+    <title>Gameplay Videos - Omega Crafter</title>
     <style>
         body {
             background-color: #121212;
@@ -18,133 +18,254 @@
             padding: 20px;
             text-align: center;
             margin-bottom: 50px;
+            position: relative;
         }
 
         .header h1 {
             color: #FFFFFF;
         }
 
-        .header a {
+        /* Menu burger (affichage sur petit écran) */
+        .burger-menu {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .burger-menu div {
+            width: 35px;
+            height: 5px;
+            margin: 6px 0;
+            background-color: #BB86FC;
+            transition: 0.4s;
+        }
+
+        /* Menu pour les grands écrans */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
             color: #BB86FC;
-            text-decoration: none;
             font-size: 18px;
+            text-decoration: none;
+            padding: 10px;
+            transition: 0.3s;
         }
 
-        .header a:hover {
-            color: #3700B3;
+        .nav-links a:hover {
+            background-color: #3700B3;
         }
 
+        /* Menu pour les petits écrans */
+        .nav-links-mobile {
+            display: none;
+            background-color: #1F1F1F;
+            padding: 15px;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav-links-mobile a {
+            display: block;
+            color: #BB86FC;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .nav-links-mobile a:hover {
+            background-color: #3700B3;
+        }
+
+        /* Transformation du menu burger quand actif */
+        .burger-menu.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .burger-menu.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Affichage du menu burger et contenu en version mobile */
+        @media (max-width: 768px) {
+            .burger-menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links-mobile.active {
+                display: block;
+            }
+        }
+
+        /* Styles de contenu principal */
         .content-wrapper {
             padding: 20px;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        /* Bouton Retour en Haut */
-        #scrollToTopBtn {
+        .description {
+            margin-bottom: 40px;
+        }
+
+        #scrollToTop, #goToHome {
+            display: none;
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 50px;
-            height: 50px;
             background-color: #BB86FC;
-            color: white;
+            color: #fff;
             border: none;
-            border-radius: 50%;
+            padding: 10px 15px;
             cursor: pointer;
-            font-size: 24px;
-            display: none; /* Caché au début */
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-            transition: opacity 0.3s, transform 0.3s;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease-in-out;
         }
 
-        #scrollToTopBtn:hover {
+        #scrollToTop:hover, #goToHome:hover {
             background-color: #3700B3;
-            transform: scale(1.1);
+        }
+
+        #goToHome {
+            background-color: #03DAC6;
+            right: 100px;
         }
     </style>
 </head>
+
 <body>
 
-<div class="content-wrapper">
-    <div>
-        <h2>Unity Engine Mechanics</h2>
+    <!-- Gros titre tout en haut -->
+    <div class="header">
+        <h1>Bienvenue sur le site de Code & Créativité</h1>
+
+
+    <!-- Menu Burger -->
+    <div class="burger-menu" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/2I08mYf3HvQ" allowfullscreen></iframe>
-    </div>
-    <h3>Mechanics: Follower</h3>
-    <div>
-        <ul>
-            <li><strong>Capsules:</strong> Capsules follow the player, but they can't get too close to the player or each other.</li>
-            <li><strong>Enemy Aggro:</strong> Initially, the enemy is in roaming mode. When it gets within a certain distance, it switches to chasing mode.</li>
-            <li><strong>Movement:</strong> Player movement is controlled using Unity's New Input System.</li>
-        </ul>
+    <!-- Liens pour le menu mobile -->
+    <div class="nav-links-mobile" id="navLinksMobile">
+        <a href="https://github.com/j1nx3d-dev" target="_blank">Mon GitHub</a>
+        <a href="UnityEngineMeca.html">Voir UnityEngineMeca</a>
+        <a href="OtherGameEngine.html">Voir Other Game Engine</a>
+        <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">Mon LinkedIn</a>
     </div>
 
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/yRq6LoMBQSc?mute=1" allowfullscreen></iframe>
+    <!-- Liens pour le menu classique (pour les grands écrans) -->
+    <div class="nav-links">
+        <a href="https://github.com/j1nx3d-dev" target="_blank">Mon GitHub</a>
+        <a href="UnityEngineMeca.html">Voir UnityEngineMeca</a>
+        <a href="OtherGameEngine.html">Voir Other Game Engine</a>
+        <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">Mon LinkedIn</a>
     </div>
-    <h3>Mechanics: Import of Mixamo Character</h3>
-    <div>
-        <p>This mechanic involves importing a character from Mixamo, assigning a looping animation to it, and placing it in a 3D scene with a placeholder representing Mars. The character is positioned on a teleportation portal.</p>
+    </div>
+    <div class="content-wrapper">
+        <div>
+            <h2>Unity Engine Mechanics</h2>
+        </div>
+
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/2I08mYf3HvQ" allowfullscreen></iframe>
+        </div>
+        <h3>Mechanics: Follower</h3>
+        <div>
+            <ul>
+                <li><strong>Capsules:</strong> Capsules follow the player, but they can't get too close to the player or each other.</li>
+                <li><strong>Enemy Aggro:</strong> Initially, the enemy is in roaming mode. When it gets within a certain distance, it switches to chasing mode.</li>
+                <li><strong>Movement:</strong> Player movement is controlled using Unity's New Input System.</li>
+            </ul>
+        </div>
+
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yRq6LoMBQSc?mute=1" allowfullscreen></iframe>
+        </div>
+        <h3>Mechanics: Import of Mixamo Character</h3>
+        <div>
+            <p>This mechanic involves importing a character from Mixamo, assigning a looping animation to it, and placing it in a 3D scene with a placeholder representing Mars. The character is positioned on a teleportation portal.</p>
+        </div>
+
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ec40wWXAfEQ" allowfullscreen></iframe>
+        </div>
+        <h3>Mechanic: Hack n' Slash Prototype</h3>
+        <div>
+            <ul>
+                <li><strong>Spawn:</strong> The character spawns with a superhero landing animation.</li>
+                <li><strong>Character:</strong> Mixamo avatar imported, with added animations and a small sword in hand.</li>
+                <li><strong>UI:</strong> The UI includes a front camera and a top-down camera view.</li>
+                <li><strong>Movement:</strong> Movement is point-and-click.</li>
+                <li><strong>NPC Interaction:</strong> When within range, the NPC waves to attract attention.</li>
+                <li><strong>Cursor Transformation:</strong> The cursor changes when interacting with the NPC.</li>
+                <li><strong>Dialogue Placeholder:</strong> A placeholder for a dialogue bubble appears.</li>
+                <li><strong>NavMesh:</strong> The NavMesh allows movement on slopes.</li>
+                <li><strong>Interaction:</strong> The cursor shape changes to show that you can interact with a panel.</li>
+                <li><strong>Enemy Interaction:</strong> When hovering the cursor over the enemy, two small swords appear as feedback to indicate it's an enemy.</li>
+            </ul>
+        </div>
     </div>
 
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ec40wWXAfEQ" allowfullscreen></iframe>
-    </div>
-    <h3>Mechanic: Hack n' Slash Prototype</h3>
-    <div>
-        <ul>
-            <li><strong>Spawn:</strong> The character spawns with a superhero landing animation.</li>
-            <li><strong>Character:</strong> Mixamo avatar imported, with added animations and a small sword in hand.</li>
-            <li><strong>UI:</strong> The UI includes a front camera and a top-down camera view.</li>
-            <li><strong>Movement:</strong> Movement is point-and-click.</li>
-            <li><strong>NPC Interaction:</strong> When within range, the NPC waves to attract attention.</li>
-            <li><strong>Cursor Transformation:</strong> The cursor changes when interacting with the NPC.</li>
-            <li><strong>Dialogue Placeholder:</strong> A placeholder for a dialogue bubble appears.</li>
-            <li><strong>NavMesh:</strong> The NavMesh allows movement on slopes.</li>
-            <li><strong>Interaction:</strong> The cursor shape changes to show that you can interact with a panel.</li>
-            <li><strong>Enemy Interaction:</strong> When hovering the cursor over the enemy, two small swords appear as feedback to indicate it's an enemy.</li>
-            <li><strong>Enemy Selection:</strong> Once selected via a click, a placeholder image appears in the UI for the enemy.</li>
-            <li><strong>Gizmos:</strong> As a developer, I display gizmos for detection.</li>
-            <li><strong>Attack Mode:</strong> When approaching the yellow circle, the skeleton enters attack mode, moves towards us, and says, "I will kill you!"</li>
-            <li><strong>Health Bars:</strong> A placeholder health bar appears above the skeleton’s head, and another under the player’s feet.</li>
-            <li><strong>Sword Strikes:</strong> We hear the sword strikes.</li>
-            <li><strong>Enemy Death:</strong> Once the skeleton is dead, it screams, "Aaaaargh!"</li>
-            <li><strong>Chest Interaction:</strong> The camera rotates to show a small chest that is interactable.</li>
-        </ul>
-    </div>
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/dtAmcTpcOTM" allowfullscreen></iframe>
-    </div>
-    <h3>Throw or Kick a Ball to a random position near the camera</h3>
+    <!-- Boutons -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">⬆️</button>
+    <button id="goToHomeBtn" onclick="goToHomePage()">🏠</button>
 
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/J8q2tSzc6bg" allowfullscreen></iframe>
-    </div>
-    <h3>Feature: Inverse Kinematic - le personnage bouge en fonction de la balle (tête, main, ...)</h3>
-</div>
-    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
-</div>
-
-<script>
-    // Afficher / cacher le bouton selon le défilement
-    window.onscroll = function() {
-        var button = document.getElementById("scrollToTopBtn");
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            button.style.display = "block";
-        } else {
-            button.style.display = "none";
+    <script>
+        // Fonction pour afficher / cacher le menu burger
+        function toggleMenu() {
+            var burgerMenu = document.querySelector('.burger-menu');
+            var navLinksMobile = document.getElementById('navLinksMobile');
+            burgerMenu.classList.toggle('active');
+            navLinksMobile.classList.toggle('show');
         }
-    };
 
-    // Fonction pour remonter en haut avec une animation fluide
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
+        // Afficher / cacher les boutons selon le défilement
+        window.onscroll = function() {
+            var button = document.getElementById("scrollToTopBtn");
+            var homeButton = document.getElementById("goToHomeBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
 
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                homeButton.style.display = "block";
+            } else {
+                homeButton.style.display = "none";
+            }
+        };
+
+        // Fonction pour remonter en haut avec une animation fluide
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        // Fonction pour aller à la page d'accueil
+        function goToHomePage() {
+            window.location.href = 'index.html'; // Assurez-vous que cette page existe
+        }
+    </script>
 </body>
 </html>

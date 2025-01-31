@@ -6,85 +6,241 @@
     <title>Gameplay Videos - Omega Crafter</title>
     <style>
         body {
-            background-color: #121212; /* Très sombre pour un mode nuit optimal */
-            color: #E0E0E0; /* Gris clair mais assez contrasté */
+            background-color: #121212;
+            color: #E0E0E0;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
         .header {
-            background-color: #1F1F1F; /* Gris très foncé pour un contraste subtil */
+            background-color: #1F1F1F;
             padding: 20px;
             text-align: center;
             margin-bottom: 50px;
+            position: relative;
         }
 
         .header h1 {
-            color: #FFFFFF; /* Texte clair pour le header */
+            color: #FFFFFF;
         }
 
-        .header a {
-            color: #BB86FC; /* Une couleur vive pour les liens (ex : bleu/violet clair) */
-            text-decoration: none;
+        /* Menu burger (affichage sur petit écran) */
+        .burger-menu {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .burger-menu div {
+            width: 35px;
+            height: 5px;
+            margin: 6px 0;
+            background-color: #BB86FC;
+            transition: 0.4s;
+        }
+
+        /* Menu pour les grands écrans */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #BB86FC;
             font-size: 18px;
+            text-decoration: none;
+            padding: 10px;
+            transition: 0.3s;
         }
 
-        .header a:hover {
-            color: #3700B3; /* Changement de couleur au survol pour améliorer l'interaction */
+        .nav-links a:hover {
+            background-color: #3700B3;
         }
 
+        /* Menu pour les petits écrans */
+        .nav-links-mobile {
+            display: none;
+            background-color: #1F1F1F;
+            padding: 15px;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav-links-mobile a {
+            display: block;
+            color: #BB86FC;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .nav-links-mobile a:hover {
+            background-color: #3700B3;
+        }
+
+        /* Transformation du menu burger quand actif */
+        .burger-menu.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .burger-menu.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Affichage du menu burger et contenu en version mobile */
+        @media (max-width: 768px) {
+            .burger-menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links-mobile.active {
+                display: block;
+            }
+        }
+
+        /* Styles de contenu principal */
         .content-wrapper {
             padding: 20px;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .link-section {
-            text-align: center;
-            margin-top: 30px;
+        .description {
+            margin-bottom: 40px;
         }
 
-        .link-section a {
-            margin-right: 20px;
-            color: #BB86FC; /* Même couleur pour les liens dans la section */
+        #scrollToTop, #goToHome {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #BB86FC;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease-in-out;
         }
 
-        .link-section a:hover {
-            color: #3700B3; /* Hover plus prononcé */
+        #scrollToTop:hover, #goToHome:hover {
+            background-color: #3700B3;
         }
+
+        #goToHome {
+            background-color: #03DAC6;
+            right: 100px; /* Espacement pour ne pas chevaucher le bouton de scroll */
+        }
+
     </style>
-
 </head>
 <body>
 
-<div class="content-wrapper">
+<div class="header">
+    <h1>Gameplay Videos - Omega Crafter</h1>
 
+    <!-- Menu Burger -->
+    <div class="burger-menu" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Liens pour le menu mobile -->
+    <div class="nav-links-mobile" id="navLinksMobile">
+        <a href="https://github.com/j1nx3d-dev" target="_blank">Mon GitHub</a>
+        <a href="UnityEngineMeca.html">Voir UnityEngineMeca</a>
+        <a href="OtherGameEngine.html">Voir Other Game Engine</a>
+        <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">Mon LinkedIn</a>
+    </div>
+
+    <!-- Liens pour le menu classique -->
+    <div class="nav-links">
+        <a href="https://github.com/j1nx3d-dev" target="_blank">Mon GitHub</a>
+        <a href="UnityEngineMeca.html">Voir UnityEngineMeca</a>
+        <a href="OtherGameEngine.html">Voir Other Game Engine</a>
+        <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">Mon LinkedIn</a>
+    </div>
+</div>
+
+<div class="content-wrapper">
     <h2>Gameplay Videos - Omega Crafter</h2>
 
-    <!-- Video YouTube (première vidéo) -->
     <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/uZELsibT2ss" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/uZELsibT2ss" allowfullscreen></iframe>
     </div>
-
-    <!-- Description de la première vidéo -->
     <div class="description">
         <p><strong>Creation of a gameplay mechanic in the game: Omega Crafter.</strong></p>
-        <p>This video showcases the creation of a gameplay mechanic for the game Omega Crafter, offering a detailed view of how mechanics are developed and integrated into the game world.</p>
+        <p>This video showcases the creation of a gameplay mechanic for the game Omega Crafter.</p>
     </div>
 
-    <!-- Nouvelle vidéo YouTube -->
     <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/JtfJYOcKrs4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JtfJYOcKrs4" allowfullscreen></iframe>
     </div>
-
-    <!-- Description de la nouvelle vidéo -->
     <div class="description">
         <p><strong>Creation of a password system in Omega Crafter.</strong></p>
-        <p>This video demonstrates the process of creating a password system within the game Omega Crafter, providing insights into the technical implementation and its integration into the game world.</p>
+        <p>This video demonstrates the process of creating a password system within the game Omega Crafter.</p>
     </div>
-
 </div>
+
+<!-- Boutons -->
+<button id="scrollToTop" onclick="scrollToTop()">⬆️</button>
+<button id="goToHome" onclick="goToHomePage()">🏠</button>
+
+<script>
+    // Fonction pour afficher / cacher le menu burger
+    function toggleMenu() {
+        var burgerMenu = document.querySelector('.burger-menu');
+        var navLinksMobile = document.getElementById('navLinksMobile');
+        burgerMenu.classList.toggle('active');
+        navLinksMobile.classList.toggle('active');
+    }
+
+    // Afficher / cacher le bouton selon le défilement
+    window.onscroll = function() {
+        var button = document.getElementById("scrollToTop");
+        var homeButton = document.getElementById("goToHome");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            homeButton.style.display = "block";
+        } else {
+            homeButton.style.display = "none";
+        }
+    };
+
+    // Fonction pour remonter en haut avec une animation fluide
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Fonction pour aller à la page d'accueil
+    function goToHomePage() {
+        window.location.href = 'index.html'; // Remplace 'index.html' par l'URL de ta page d'accueil
+    }
+</script>
 
 </body>
 </html>

@@ -5,56 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'Accueil</title>
     <style>
-    body {
-        background-color: #121212; /* Très sombre pour un mode nuit optimal */
-        color: #E0E0E0; /* Gris clair mais assez contrasté */
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
+        body {
+            background-color: #121212;
+            color: #E0E0E0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    .header {
-        background-color: #1F1F1F; /* Gris très foncé pour un contraste subtil */
-        padding: 20px;
-        text-align: center;
-        margin-bottom: 50px;
-    }
+        .header {
+            background-color: #1F1F1F;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-    .header h1 {
-        color: #FFFFFF; /* Texte clair pour le header */
-    }
+        .header h1 {
+            color: #FFFFFF;
+        }
 
-    .header a {
-        color: #BB86FC; /* Une couleur vive pour les liens (ex : bleu/violet clair) */
-        text-decoration: none;
-        font-size: 18px;
-    }
+        .header a {
+            color: #BB86FC;
+            text-decoration: none;
+            font-size: 18px;
+        }
 
-    .header a:hover {
-        color: #3700B3; /* Changement de couleur au survol pour améliorer l'interaction */
-    }
+        .header a:hover {
+            color: #3700B3;
+        }
 
-    .content-wrapper {
-        padding: 20px;
-        max-width: 900px;
-        margin: 0 auto;
-    }
+        /* Style pour le menu burger */
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            width: 30px;
+            height: 21px;
+            justify-content: space-between;
+            cursor: pointer;
+        }
 
-    .link-section {
-        text-align: center;
-        margin-top: 30px;
-    }
+        .burger-menu div {
+            width: 30px;
+            height: 3px;
+            background-color: #BB86FC;
+        }
 
-    .link-section a {
-        margin-right: 20px;
-        color: #BB86FC; /* Même couleur pour les liens dans la section */
-    }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
 
-    .link-section a:hover {
-        color: #3700B3; /* Hover plus prononcé */
-    }
-</style>
+        .nav-links a {
+            margin-right: 20px;
+            color: #BB86FC;
+        }
 
+        .nav-links a:hover {
+            color: #3700B3;
+        }
+
+        /* Masquer les liens par défaut et les afficher en mode burger */
+        .nav-links-mobile {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* Si le menu burger est ouvert */
+        .nav-links-mobile.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .burger-menu {
+                display: flex;
+            }
+        }
+
+    </style>
 </head>
 <body>
 
@@ -63,18 +98,41 @@
         <h1>Bienvenue sur la page d'accueil</h1>
     </div>
 
-    <!-- Section contenant les liens placés côte à côte -->
-    <div class="link-section">
+    <!-- Menu Burger -->
+    <div class="burger-menu" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Liens pour le menu mobile -->
+    <div class="nav-links-mobile" id="navLinksMobile">
         <a href="https://github.com/j1nx3d-dev" target="_blank">Mon GitHub</a>
         <a href="UnityEngineMeca.html">Voir UnityEngineMeca</a>
         <a href="OtherGameEngine.html">Voir Other Game Engine</a>
-        <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">Mon LinkedIn</a> <!-- Nouveau lien ajouté -->
+        <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">Mon LinkedIn</a>
+    </div>
+
+    <!-- Liens pour le menu classique (pour les grands écrans) -->
+    <div class="nav-links">
+        <a href="https://github.com/j1nx3d-dev" target="_blank">Mon GitHub</a>
+        <a href="UnityEngineMeca.html">Voir UnityEngineMeca</a>
+        <a href="OtherGameEngine.html">Voir Other Game Engine</a>
+        <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">Mon LinkedIn</a>
     </div>
 
     <!-- Contenu principal de la page -->
     <div class="content-wrapper">
         <p>Cette page contient des liens vers les fichiers UnityEngineMeca.html et OtherGameEngine.html. Utilisez les liens ci-dessus pour y accéder.</p>
     </div>
+
+    <script>
+        // Fonction qui permet d'ouvrir et fermer le menu burger
+        function toggleMenu() {
+            const menu = document.getElementById('navLinksMobile');
+            menu.classList.toggle('show');
+        }
+    </script>
 
 </body>
 </html>
