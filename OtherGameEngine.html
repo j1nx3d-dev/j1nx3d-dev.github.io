@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>"J1nx3d Dev: From Glitch to Feature"</title>
+
     <!-- Lien vers le fichier CSS externe -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Lien vers le fichier JS externe -->
+    <script src="scripts.js" defer></script> <!-- Ajouté le defer pour s'assurer que le script se charge après le DOM -->
 </head>
+
 <body>
 
+  <!-- Header avec le titre principal -->
   <div class="header">
       <div id="top">
         <a href="index.html">
@@ -37,71 +43,35 @@
           <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">LinkedIn</a>
       </div>
   </div>
+  
+      <div class="content-wrapper">
+          <h2>Gameplay Videos - Omega Crafter</h2>
 
-<div class="content-wrapper">
-    <h2>Gameplay Videos - Omega Crafter</h2>
+          <div>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/uZELsibT2ss" allowfullscreen></iframe>
+          </div>
+          <div class="description">
+              <p><strong>Creation of a gameplay mechanic in the game: Omega Crafter.</strong></p>
+              <ul>
+                <li><p>This video showcases the creation of a gameplay mechanic for the game Omega Crafter.</p>
+              </ul>
+          </div>
 
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/uZELsibT2ss" allowfullscreen></iframe>
+          <div>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/JtfJYOcKrs4" allowfullscreen></iframe>
+          </div>
+          <div class="description">
+              <p><strong>Creation of a password system in Omega Crafter.</strong></p>
+              <ul>
+                <li><p>This video demonstrates the process of creating a password system within the game Omega Crafter.</p></li>
+              </ul>
+          </div>
+      </div>
+
+    <!-- Boutons flottants -->
+    <div id="floatingButtons">
+      <button id="scrollToTopBtn" onclick="scrollToTop()">⬆️</button>
+      <button id="goToHomeBtn" onclick="goToHomePage()">🏠</button>
     </div>
-    <div class="description">
-        <p><strong>Creation of a gameplay mechanic in the game: Omega Crafter.</strong></p>
-        <ul>
-          <li><p>This video showcases the creation of a gameplay mechanic for the game Omega Crafter.</p>
-        </ul>
-    </div>
-
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/JtfJYOcKrs4" allowfullscreen></iframe>
-    </div>
-    <div class="description">
-        <p><strong>Creation of a password system in Omega Crafter.</strong></p>
-        <ul>
-          <li><p>This video demonstrates the process of creating a password system within the game Omega Crafter.</p></li>
-        </ul>
-    </div>
-</div>
-
-<!-- Boutons -->
-<button id="scrollToTop" onclick="scrollToTop()">⬆️</button>
-<button id="goToHome" onclick="goToHomePage()">🏠</button>
-
-<script>
-    // Fonction pour afficher / cacher le menu burger
-    function toggleMenu() {
-        var burgerMenu = document.querySelector('.burger-menu');
-        var navLinksMobile = document.getElementById('navLinksMobile');
-        burgerMenu.classList.toggle('active');
-        navLinksMobile.classList.toggle('active');
-    }
-
-    // Afficher / cacher le bouton selon le défilement
-    window.onscroll = function() {
-        var button = document.getElementById("scrollToTop");
-        var homeButton = document.getElementById("goToHome");
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            button.style.display = "block";
-        } else {
-            button.style.display = "none";
-        }
-
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            homeButton.style.display = "block";
-        } else {
-            homeButton.style.display = "none";
-        }
-    };
-
-    // Fonction pour remonter en haut avec une animation fluide
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    // Fonction pour aller à la page d'accueil
-    function goToHomePage() {
-        window.location.href = 'index.html'; // Remplace 'index.html' par l'URL de ta page d'accueil
-    }
-</script>
-
 </body>
 </html>

@@ -121,10 +121,20 @@ body {
 }
 
 /* Style des boutons flottants */
-#scrollToTopBtn, #goToHomeBtn {
-    position: fixed;
+
+#goToHomeBtn {
     bottom: 20px;
     right: 20px;
+    z-index: 1100;
+}
+
+#scrollToTopBtn {
+    bottom: 80px; /* Décalé vers le haut */
+    right: 20px;
+}
+
+#scrollToTopBtn, #goToHomeBtn {
+    position: fixed;
     background-color: #333;
     color: white;
     border: none;
@@ -135,6 +145,17 @@ body {
     transition: opacity 0.3s ease;
     z-index: 1000; /* Pour s'assurer que les boutons sont au-dessus du contenu */
 }
+
+#floatingButtons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Les boutons s'empilent en colonne */
+    gap: 10px; /* Espacement entre les boutons */
+}
+
+
 
 /* Classe 'show' qui rend les boutons visibles */
 #scrollToTopBtn.show, #goToHomeBtn.show {
