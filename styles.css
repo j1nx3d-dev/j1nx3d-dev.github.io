@@ -10,6 +10,10 @@ body {
 /* Header */
 .header {
     background-color: #1F1F1F; /* Fond légèrement plus clair pour l'en-tête */
+    background-image: url('jinxplaceimg.jpg');
+    background-size: 100% 200%; /* Étire l'image pour occuper toute la largeur et hauteur */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Empêcher la répétition de l'image */
     padding: 20px;
     text-align: center;
     margin-bottom: 50px;
