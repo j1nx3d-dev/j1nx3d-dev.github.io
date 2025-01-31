@@ -17,6 +17,7 @@
             background-color: #333;
             padding: 20px;
             text-align: center;
+            margin-bottom: 50px; /* Espace plus grand sous le header */
         }
 
         .header a {
@@ -35,19 +36,34 @@
             max-width: 900px;
             margin: 0 auto;
         }
+
+        /* Section contenant les liens placés côte à côte */
+        .link-section {
+            text-align: center;
+            margin-top: 30px; /* Espacement plus important avant les liens */
+        }
+
+        .link-section a {
+            margin-right: 20px; /* Espace entre les liens */
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header avec le lien vers UnityEngineMeca.html -->
+    <!-- Header avec le titre principal -->
     <div class="header">
+        <h1>Bienvenue sur la page d'accueil</h1>
+    </div>
+
+    <!-- Section contenant les liens placés côte à côte -->
+    <div class="link-section">
         <a href="UnityEngineMeca.html">Voir UnityEngineMeca</a>
+        <a href="OtherGameEngine.html">Voir Other Game Engine</a>
     </div>
 
     <!-- Contenu principal de la page -->
     <div class="content-wrapper">
-        <h1>Bienvenue sur la page d'accueil</h1>
-        <p>Cette page contient un lien vers le fichier UnityEngineMeca.html. Utilisez le lien ci-dessus pour y accéder.</p>
+        <p>Cette page contient des liens vers les fichiers UnityEngineMeca.html et OtherGameEngine.html. Utilisez les liens ci-dessus pour y accéder.</p>
     </div>
 
 </body>
