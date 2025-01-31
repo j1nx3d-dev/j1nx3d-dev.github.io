@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code & Créativité par Kevin</title>
+    <style>
+        body {
+            background-color: #2c2c2c; /* Dark Gray Background */
+            color: #d3d3d3; /* Light Gray text for softer contrast */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #a9a9a9; /* Slightly lighter gray for the links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #fff; /* White on hover for the links */
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border: none;
+        }
+
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Style pour les zones de texte scrollables */
+        .scrollable-description {
+            max-height: 150px;
+            overflow-y: scroll;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #333;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content-wrapper">
+
+    <!-- Region: Titre principal et lien GitHub -->
+    <!-- summary: Section principale du site avec titre et lien vers GitHub -->
+    <div>
+        <h2>Unity Engine Mechanics</h2>
+    </div>
+    <div>
+        <p>Voici le lien vers mon profil GitHub : <a href="https://github.com/satey01" target="_blank">Mon GitHub</a></p>
+    </div>
+
+    <!-- Region: Intégration de la vidéo YouTube (Follower System) -->
+    <!-- summary: Ajout de la vidéo du système de followers -->
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2I08mYf3HvQ?mute=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <!-- Region: Description des mécaniques Unity -->
+    <!-- summary: Description du système de followers dans Unity -->
+    <h3>Mechanics: Follower </h3>
+    <div class="scrollable-description">
+        <ul>
+            <li><strong>Capsules:</strong> Capsules follow the player, but they can't get too close to the player or each other.</li>
+            <li><strong>Enemy Aggro:</strong> Initially, the enemy is in roaming mode. When it gets within a certain distance, it switches to chasing mode.</li>
+            <li><strong>Movement:</strong> Player movement is controlled using Unity's New Input System.</li>
+        </ul>
+    </div>
+
+    <!-- Region: Intégration de la vidéo YouTube (Mixamo) -->
+    <!-- summary: Vidéo démontrant l'importation de personnages Mixamo -->
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yRq6LoMBQSc?mute=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <!-- Region: Description des mécaniques Mixamo -->
+    <!-- summary: Explication du processus d'importation et d'animation de personnages Mixamo -->
+    <h3>Mechanics: Import of Mixamo Character</h3>
+    <div class="scrollable-description">
+        <p>This mechanic involves importing a character from Mixamo, assigning a looping animation to it, and placing it in a 3D scene with a placeholder representing Mars. The character is positioned on a teleportation portal.</p>
+    </div>
+
+    <!-- Region: Intégration de la vidéo YouTube (Prototype Hack n Slash) -->
+    <!-- summary: Vidéo de prototype Hack n Slash -->
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ec40wWXAfEQ?mute=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <!-- Region: Description du prototype Hack n Slash -->
+    <!-- summary: Explication détaillée des mécaniques du prototype Hack n Slash -->
+    <h3>Mechanic: Hack n' Slash Prototype</h3>
+    <div class="scrollable-description">
+        <p><strong>Description of the Video:</strong></p>
+        <ul>
+            <li><strong>Spawn:</strong> The character spawns with a superhero landing animation.</li>
+            <li><strong>Character:</strong> Mixamo avatar imported, with added animations and a small sword in hand.</li>
+            <li><strong>UI:</strong> The UI includes a front camera and a top-down camera view.</li>
+            <li><strong>Movement:</strong> Movement is point-and-click.</li>
+            <li><strong>NPC Interaction:</strong> When within range, the NPC waves to attract attention.</li>
+            <li><strong>Cursor Transformation:</strong> The cursor changes when interacting with the NPC.</li>
+            <li><strong>Dialogue Placeholder:</strong> A placeholder for a dialogue bubble appears.</li>
+            <li><strong>NavMesh:</strong> The NavMesh allows movement on slopes.</li>
+            <li><strong>Interaction:</strong> The cursor shape changes to show that you can interact with a panel.</li>
+            <li><strong>Enemy Interaction:</strong> When hovering the cursor over the enemy, two small swords appear as feedback to indicate it's an enemy.</li>
+            <li><strong>Enemy Selection:</strong> Once selected via a click, a placeholder image appears in the UI for the enemy.</li>
+            <li><strong>Gizmos:</strong> As a developer, I display gizmos for detection.</li>
+            <li><strong>Attack Mode:</strong> When approaching the yellow circle, the skeleton enters attack mode, moves towards us, and says, "I will kill you!"</li>
+            <li><strong>Health Bars:</strong> A placeholder health bar appears above the skeleton’s head, and another under the player’s feet.</li>
+            <li><strong>Sword Strikes:</strong> We hear the sword strikes.</li>
+            <li><strong>Enemy Death:</strong> Once the skeleton is dead, it screams, "Aaaaargh!"</li>
+            <li><strong>Chest Interaction:</strong> The camera rotates to show a small chest that is interactable.</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
