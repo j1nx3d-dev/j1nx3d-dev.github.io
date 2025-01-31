@@ -6,129 +6,61 @@
     <title>Code & Créativité par Kevin</title>
     <style>
         body {
-            background-color: #121212; /* Très sombre pour un mode nuit optimal */
-            color: #E0E0E0; /* Gris clair mais assez contrasté */
+            background-color: #121212;
+            color: #E0E0E0;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-
         .header {
-            background-color: #1F1F1F; /* Gris très foncé pour un contraste subtil */
+            background-color: #1F1F1F;
             padding: 20px;
             text-align: center;
             margin-bottom: 50px;
         }
-
         .header h1 {
-            color: #FFFFFF; /* Texte clair pour le header */
+            color: #FFFFFF;
         }
-
-        .header a {
-            color: #BB86FC; /* Une couleur vive pour les liens (ex : bleu/violet clair) */
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .header a:hover {
-            color: #3700B3; /* Changement de couleur au survol pour améliorer l'interaction */
-        }
-
         .content-wrapper {
             padding: 20px;
             max-width: 900px;
             margin: 0 auto;
         }
-
-        .link-section {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .link-section a {
-            margin-right: 20px;
-            color: #BB86FC; /* Même couleur pour les liens dans la section */
-        }
-
-        .link-section a:hover {
-            color: #3700B3; /* Hover plus prononcé */
+        .video-section {
+            margin-bottom: 40px;
         }
     </style>
-
 </head>
 <body>
-
 <div class="content-wrapper">
+    <h2>Unity Engine Mechanics</h2>
 
-    <!-- Region: Titre principal et lien GitHub -->
-    <!-- summary: Section principale du site avec titre -->
-    <div>
-        <h2>Unity Engine Mechanics</h2>
+    <div class="video-section">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2I08mYf3HvQ" allowfullscreen></iframe>
+        <h3>Mechanics: Follower</h3>
     </div>
 
-    <!-- Region: Intégration de la vidéo YouTube (Follower System) -->
-    <!-- summary: Ajout de la vidéo du système de followers -->
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/2I08mYf3HvQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="video-section">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yRq6LoMBQSc?mute=1" allowfullscreen></iframe>
+        <h3>Mechanics: Import of Mixamo Character</h3>
     </div>
 
-    <!-- Region: Description des mécaniques Unity -->
-    <!-- summary: Description du système de followers dans Unity -->
-    <h3>Mechanics: Follower </h3>
-    <div class="scrollable-description">
-        <ul>
-            <li><strong>Capsules:</strong> Capsules follow the player, but they can't get too close to the player or each other.</li>
-            <li><strong>Enemy Aggro:</strong> Initially, the enemy is in roaming mode. When it gets within a certain distance, it switches to chasing mode.</li>
-            <li><strong>Movement:</strong> Player movement is controlled using Unity's New Input System.</li>
-        </ul>
+    <div class="video-section">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ec40wWXAfEQ" allowfullscreen></iframe>
+        <h3>Mechanic: Hack n' Slash Prototype</h3>
     </div>
 
-    <!-- Region: Intégration de la vidéo YouTube (Mixamo) -->
-    <!-- summary: Vidéo démontrant l'importation de personnages Mixamo -->
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/yRq6LoMBQSc?mute=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- Nouvelle vidéo ajoutée -->
+    <div class="video-section">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dtAmcTpcOTM" allowfullscreen></iframe>
+        <h3>Throw or Kick a Ball to a random position near the camera</h3>
     </div>
 
-    <!-- Region: Description des mécaniques Mixamo -->
-    <!-- summary: Explication du processus d'importation et d'animation de personnages Mixamo -->
-    <h3>Mechanics: Import of Mixamo Character</h3>
-    <div class="scrollable-description">
-        <p>This mechanic involves importing a character from Mixamo, assigning a looping animation to it, and placing it in a 3D scene with a placeholder representing Mars. The character is positioned on a teleportation portal.</p>
+    <!-- Nouvelle vidéo ajoutée -->
+    <div class="video-section">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/J8q2tSzc6bg" allowfullscreen></iframe>
+        <h3>Feature : Inverse Kinematic - le personnage bouge en fonction de la balle (tête, main, ...)</h3>
     </div>
-
-    <!-- Region: Intégration de la vidéo YouTube (Prototype Hack n Slash) -->
-    <!-- summary: Vidéo de prototype Hack n Slash -->
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ec40wWXAfEQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
-    <!-- Region: Description du prototype Hack n Slash -->
-    <!-- summary: Explication détaillée des mécaniques du prototype Hack n Slash -->
-    <h3>Mechanic: Hack n' Slash Prototype</h3>
-    <div class="scrollable-description">
-        <p><strong>Description of the Video:</strong></p>
-        <ul>
-            <li><strong>Spawn:</strong> The character spawns with a superhero landing animation.</li>
-            <li><strong>Character:</strong> Mixamo avatar imported, with added animations and a small sword in hand.</li>
-            <li><strong>UI:</strong> The UI includes a front camera and a top-down camera view.</li>
-            <li><strong>Movement:</strong> Movement is point-and-click.</li>
-            <li><strong>NPC Interaction:</strong> When within range, the NPC waves to attract attention.</li>
-            <li><strong>Cursor Transformation:</strong> The cursor changes when interacting with the NPC.</li>
-            <li><strong>Dialogue Placeholder:</strong> A placeholder for a dialogue bubble appears.</li>
-            <li><strong>NavMesh:</strong> The NavMesh allows movement on slopes.</li>
-            <li><strong>Interaction:</strong> The cursor shape changes to show that you can interact with a panel.</li>
-            <li><strong>Enemy Interaction:</strong> When hovering the cursor over the enemy, two small swords appear as feedback to indicate it's an enemy.</li>
-            <li><strong>Enemy Selection:</strong> Once selected via a click, a placeholder image appears in the UI for the enemy.</li>
-            <li><strong>Gizmos:</strong> As a developer, I display gizmos for detection.</li>
-            <li><strong>Attack Mode:</strong> When approaching the yellow circle, the skeleton enters attack mode, moves towards us, and says, "I will kill you!"</li>
-            <li><strong>Health Bars:</strong> A placeholder health bar appears above the skeleton’s head, and another under the player’s feet.</li>
-            <li><strong>Sword Strikes:</strong> We hear the sword strikes.</li>
-            <li><strong>Enemy Death:</strong> Once the skeleton is dead, it screams, "Aaaaargh!"</li>
-            <li><strong>Chest Interaction:</strong> The camera rotates to show a small chest that is interactable.</li>
-        </ul>
-    </div>
-
 </div>
-
 </body>
 </html>
