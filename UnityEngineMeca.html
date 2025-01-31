@@ -3,190 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"J1nx3d Dev: From Glitch to Glory"</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #E0E0E0;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+    <title>"J1nx3d Dev: From Glitch to Feature"</title>
 
-        .header {
-            background-color: #1F1F1F;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
+    <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="styles.css">
 
-        .header h1 {
-            color: #FFFFFF;
-        }
-
-        /* Menu burger (affichage sur petit écran) */
-        .burger-menu {
-            display: none;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-        }
-
-        .burger-menu div {
-            width: 35px;
-            height: 5px;
-            margin: 6px 0;
-            background-color: #BB86FC;
-            transition: 0.4s;
-        }
-
-        /* Menu pour les grands écrans */
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: #BB86FC;
-            font-size: 18px;
-            text-decoration: none;
-            padding: 10px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            background-color: #3700B3;
-        }
-
-        /* Menu pour les petits écrans */
-        .nav-links-mobile {
-            display: none;
-            background-color: #1F1F1F;
-            padding: 15px;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-        }
-
-        .nav-links-mobile a {
-            display: block;
-            color: #BB86FC;
-            font-size: 18px;
-            text-decoration: none;
-            padding: 10px;
-            transition: 0.3s;
-        }
-
-        .nav-links-mobile a:hover {
-            background-color: #3700B3;
-        }
-
-        /* Transformation du menu burger quand actif */
-        .burger-menu.active div:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .burger-menu.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .burger-menu.active div:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        /* Affichage du menu burger et contenu en version mobile */
-        @media (max-width: 768px) {
-            .burger-menu {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-links-mobile.active {
-                display: block;
-            }
-        }
-
-        /* Styles de contenu principal */
-        .content-wrapper {
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .description {
-            margin-bottom: 40px;
-        }
-
-        #scrollToTop, #goToHome {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #BB86FC;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        #scrollToTop:hover, #goToHome:hover {
-            background-color: #3700B3;
-        }
-
-        #goToHome {
-            background-color: #03DAC6;
-            right: 100px;
-        }
-    </style>
+    <!-- Lien vers le fichier JS externe -->
+    <script src="scripts.js" defer></script> <!-- Ajouté le defer pour s'assurer que le script se charge après le DOM -->
 </head>
 
 <body>
 
     <!-- Gros titre tout en haut -->
     <div class="header">
-        <h1>"J1nx3d Dev: From Glitch to Glory"</h1>
+        <h1>"J1nx3d Dev: From Glitch to Feature"</h1>
 
+        <!-- Menu Burger -->
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
-    <!-- Menu Burger -->
-    <div class="burger-menu" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+        <!-- Liens pour le menu mobile -->
+        <div class="nav-links-mobile" id="navLinksMobile">
+            <a href="https://github.com/j1nx3d-dev" target="_blank">GitHub Repos</a>
+            <a href="UnityEngineMeca.html">Unity Engine Mechanics</a>
+            <a href="OtherGameEngine.html">Other Game Engine</a>
+            <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">LinkedIn</a>
+        </div>
+
+        <!-- Liens pour le menu classique (pour les grands écrans) -->
+        <div class="nav-links">
+            <a href="https://github.com/j1nx3d-dev" target="_blank">GitHub Repos</a>
+            <a href="UnityEngineMeca.html">Unity Engine Mechanics</a>
+            <a href="OtherGameEngine.html">Other Game Engine</a>
+            <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">LinkedIn</a>
+        </div>
     </div>
 
-    <!-- Liens pour le menu mobile -->
-    <div class="nav-links-mobile" id="navLinksMobile">
-        <a href="https://github.com/j1nx3d-dev" target="_blank">Mon GitHub</a>
-        <a href="UnityEngineMeca.html">Voir UnityEngineMeca</a>
-        <a href="OtherGameEngine.html">Voir Other Game Engine</a>
-        <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">Mon LinkedIn</a>
-    </div>
-
-    <!-- Liens pour le menu classique (pour les grands écrans) -->
-    <div class="nav-links">
-        <a href="https://github.com/j1nx3d-dev" target="_blank">Mon GitHub</a>
-        <a href="UnityEngineMeca.html">Voir UnityEngineMeca</a>
-        <a href="OtherGameEngine.html">Voir Other Game Engine</a>
-        <a href="https://www.linkedin.com/in/lambrettekevin/" target="_blank">Mon LinkedIn</a>
-    </div>
-    </div>
     <div class="content-wrapper">
         <div>
             <h2>Unity Engine Mechanics</h2>
         </div>
-    <h3>Mechanics: Follower</h3>
+
+        <h3>Mechanics: Follower</h3>
         <div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/2I08mYf3HvQ" allowfullscreen></iframe>
         </div>
@@ -198,7 +59,8 @@
                 <li><strong>Movement:</strong> Player movement is controlled using Unity's New Input System.</li>
             </ul>
         </div>
-    <h3>Mechanics: Import of Mixamo Character</h3>
+
+        <h3>Mechanics: Import of Mixamo Character</h3>
         <div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/yRq6LoMBQSc?mute=1" allowfullscreen></iframe>
         </div>
@@ -206,7 +68,8 @@
         <div>
             <p>This mechanic involves importing a character from Mixamo, assigning a looping animation to it, and placing it in a 3D scene with a placeholder representing Mars. The character is positioned on a teleportation portal.</p>
         </div>
-<h3>Mechanic: Hack n' Slash Prototype</h3>
+
+        <h3>Prototype: Hack n' Slash</h3>
         <div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/ec40wWXAfEQ" allowfullscreen></iframe>
         </div>
@@ -225,6 +88,7 @@
                 <li><strong>Enemy Interaction:</strong> When hovering the cursor over the enemy, two small swords appear as feedback to indicate it's an enemy.</li>
             </ul>
         </div>
+
         <h3>Mechanic: Catch and Release IK</h3>
         <div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/J8q2tSzc6bg" allowfullscreen></iframe>
@@ -234,50 +98,14 @@
             <ul>
                 <li><strong>Catch Mechanic:</strong> The character uses inverse kinematics (IK) to catch the ball.</li>
                 <li><strong>Look-at Mechanic:</strong> Once the ball is caught, the character follows it with their eyes using a body orientation animation.</li>
-                <li><strong>Release Mechanic :</strong> After following the ball, the character releases it, using IK to return to a neutral position or another predefined animation.</li>
+                <li><strong>Release Mechanic:</strong> After following the ball, the character releases it, using IK to return to a neutral position or another predefined animation.</li>
             </ul>
-
+        </div>
     </div>
 
     <!-- Boutons -->
     <button id="scrollToTopBtn" onclick="scrollToTop()">⬆️</button>
     <button id="goToHomeBtn" onclick="goToHomePage()">🏠</button>
 
-    <script>
-        // Fonction pour afficher / cacher le menu burger
-        function toggleMenu() {
-            var burgerMenu = document.querySelector('.burger-menu');
-            var navLinksMobile = document.getElementById('navLinksMobile');
-            burgerMenu.classList.toggle('active');
-            navLinksMobile.classList.toggle('show');
-        }
-
-        // Afficher / cacher les boutons selon le défilement
-        window.onscroll = function() {
-            var button = document.getElementById("scrollToTopBtn");
-            var homeButton = document.getElementById("goToHomeBtn");
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                button.style.display = "block";
-            } else {
-                button.style.display = "none";
-            }
-
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                homeButton.style.display = "block";
-            } else {
-                homeButton.style.display = "none";
-            }
-        };
-
-        // Fonction pour remonter en haut avec une animation fluide
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-
-        // Fonction pour aller à la page d'accueil
-        function goToHomePage() {
-            window.location.href = 'index.html'; // Assurez-vous que cette page existe
-        }
-    </script>
 </body>
 </html>

@@ -1,0 +1,158 @@
+/* Styles généraux du corps de la page */
+body {
+    background-color: #121212; /* Fond sombre pour toute la page */
+    color: #E0E0E0; /* Texte clair pour contraster avec le fond sombre */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    background-color: #1F1F1F; /* Fond légèrement plus clair pour l'en-tête */
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.header h1 {
+    color: #FFFFFF; /* Texte en blanc pour le titre */
+}
+
+/* Menu burger (affichage sur petit écran) */
+.burger-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 35px;
+    height: 5px;
+    margin: 6px 0;
+    background-color: #BB86FC; /* Violet clair pour les barres du burger */
+    transition: 0.4s;
+}
+
+/* Menu pour les grands écrans */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #BB86FC;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #3700B3;
+}
+
+/* Menu pour les petits écrans */
+.nav-links-mobile {
+    display: none;
+    background-color: #1F1F1F;
+    padding: 15px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links-mobile a {
+    display: block;
+    color: #BB86FC;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.nav-links-mobile a:hover {
+    background-color: #3700B3;
+}
+
+/* Transformation du menu burger quand actif */
+.burger-menu.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Affichage du menu burger et contenu en version mobile */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links-mobile.active {
+        display: block;
+    }
+}
+
+/* Contenu principal */
+.content-wrapper {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Boutons flottants */
+#scrollToTopBtn, #goToHomeBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(187, 134, 252, 0.8); /* Violet transparent */
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Bouton maison (avec fond différent) */
+#goToHomeBtn {
+    background-color: rgba(3, 218, 198, 0.8);
+    right: 80px;
+}
+
+/* Effet au survol */
+#scrollToTopBtn:hover, #goToHomeBtn:hover {
+    background-color: rgba(187, 134, 252, 1); /* Passage au violet plein */
+}
+
+/* Apparition progressive des boutons */
+#scrollToTopBtn, #goToHomeBtn {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Apparition quand ils sont activés */
+#scrollToTopBtn.show, #goToHomeBtn.show {
+    opacity: 1;
+}
