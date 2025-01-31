@@ -9,46 +9,75 @@
             background-color: #2c2c2c; /* Dark Gray Background */
             color: #d3d3d3; /* Light Gray text for softer contrast */
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
+        h2 {
+            margin-top: 20px;
+        }
+
         li {
             margin: 10px 0;
         }
+
         a {
             color: #a9a9a9; /* Slightly lighter gray for the links */
             text-decoration: none;
         }
+
         a:hover {
             color: #fff; /* White on hover for the links */
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border: none;
+        }
+
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Première div avec le lien vers GitHub -->
+<div class="content-wrapper">
+
+    <!-- Titre principal -->
+    <div>
+        <h2>Unity Engine Mechanics</h2>
+    </div>
+
+    <!-- Lien vers GitHub -->
     <div>
         <p>Voici le lien vers mon profil GitHub : <a href="https://github.com/satey01" target="_blank">Mon GitHub</a></p>
     </div>
 
-    <!-- Deuxième div vide pour ajouter du contenu plus tard -->
+    <!-- Intégration de la vidéo YouTube (Follower System) -->
     <div>
-        <!-- Tu peux ajouter du contenu ici si tu veux -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yRq6LoMBQSc?mute=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <!-- Intégration de la vidéo YouTube -->
+    <!-- Description des mécaniques Unity -->
     <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/2I08mYf3HvQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
-    <!-- Unity Engine Mechanics Description -->
-    <div>
-        <h2>Unity Engine Mechanics</h2>
         <p><strong>Mechanics:</strong></p>
         <ul>
-          <li><strong>Capsules:</strong> Capsules follow the player, but they can't get too close to the player or each other.</li>
-          <li><strong>Enemy Aggro:</strong> Initially, the enemy is in roaming mode. When it gets within a certain distance, it switches to chasing mode.</li>
-          <li><strong>Movement:</strong> Player movement is controlled using Unity's New Input System.</li>
+            <li><strong>Capsules:</strong> Capsules follow the player, but they can't get too close to the player or each other.</li>
+            <li><strong>Enemy Aggro:</strong> Initially, the enemy is in roaming mode. When it gets within a certain distance, it switches to chasing mode.</li>
+            <li><strong>Movement:</strong> Player movement is controlled using Unity's New Input System.</li>
         </ul>
     </div>
+
+    <!-- Intégration de la vidéo YouTube (Mixamo) -->
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yRq6LoMBQSc?mute=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+</div>
 
 </body>
 </html>
