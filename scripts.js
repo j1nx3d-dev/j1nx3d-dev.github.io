@@ -1,5 +1,5 @@
 // Fonction pour afficher ou masquer les boutons flottants
-window.onscroll = function() {
+window.onscroll = function () {
     // Vérifie la position du scroll
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         // Si l'utilisateur a scrollé plus de 100px, on affiche les boutons
@@ -25,4 +25,12 @@ function scrollToTop() {
 function goToHomePage() {
     window.location.href = "index.html"; // Remplace par l'URL de ta page d'accueil
     console.log("Redirecting to home page!");
+}
+
+function toggleMenu() {
+    const menu = document.getElementById("navLinksMobile");
+    const burger = document.querySelector(".burger-menu");
+
+    menu.classList.toggle("active");  // Affiche ou cache le menu mobile
+    burger.classList.toggle("active"); // Anime l'icône burger
 }

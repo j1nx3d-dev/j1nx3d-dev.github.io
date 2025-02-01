@@ -3,31 +3,30 @@ body {
     background-color: #121212; /* Fond sombre pour toute la page */
     background-image: url('bodybgimg.jpg');
     background-size: cover;
-    background-position: top;
-    background-repeat: repeat-y;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #E0E0E0; /* Texte clair pour contraster avec le fond sombre */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    border-radius: 10px;
 }
 
 /* Header */
 .header {
     background-color: #1F1F1F; /* Fond légèrement plus clair pour l'en-tête */
     background-image: url('jinxplaceimg.jpg');
-    background-size: 100% 200%; /* Étire l'image pour occuper toute la largeur et hauteur */
-    background-position: center; /* Centrer l'image */
-    background-repeat: no-repeat; /* Empêcher la répétition de l'image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 20px;
     text-align: center;
     margin-bottom: 50px;
     position: relative;
 }
 
-.header h1 {
-    color: #FFFFFF; /* Texte en blanc pour le titre */
-}
+    .header h1 {
+        color: #FFFFFF;
+    }
 
 /* Menu burger (affichage sur petit écran) */
 .burger-menu {
@@ -36,15 +35,16 @@ body {
     top: 20px;
     left: 20px;
     cursor: pointer;
+    z-index: 1200; /* Assure la visibilité du menu */
 }
 
-.burger-menu div {
-    width: 35px;
-    height: 5px;
-    margin: 6px 0;
-    background-color: #BB86FC; /* Violet clair pour les barres du burger */
-    transition: 0.4s;
-}
+    .burger-menu div {
+        width: 35px;
+        height: 5px;
+        margin: 6px 0;
+        background-color: #BB86FC; /* Violet clair */
+        transition: transform 0.4s, opacity 0.4s;
+    }
 
 /* Menu pour les grands écrans */
 .nav-links {
@@ -53,17 +53,18 @@ body {
     gap: 20px;
 }
 
-.nav-links a {
-    color: #BB86FC;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 10px;
-    transition: 0.3s;
-}
+    .nav-links a {
+        color: #BB86FC;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 10px;
+        transition: background-color 0.3s, transform 0.2s;
+    }
 
-.nav-links a:hover {
-    background-color: #3700B3;
-}
+        .nav-links a:hover {
+            background-color: #3700B3;
+            transform: scale(1.1);
+        }
 
 /* Menu pour les petits écrans */
 .nav-links-mobile {
@@ -75,20 +76,21 @@ body {
     left: 0;
     width: 100%;
     text-align: center;
+    z-index: 1100;
 }
 
-.nav-links-mobile a {
-    display: block;
-    color: #BB86FC;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 10px;
-    transition: 0.3s;
-}
+    .nav-links-mobile a {
+        display: block;
+        color: #BB86FC;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 10px;
+        transition: background-color 0.3s;
+    }
 
-.nav-links-mobile a:hover {
-    background-color: #3700B3;
-}
+        .nav-links-mobile a:hover {
+            background-color: #3700B3;
+        }
 
 /* Transformation du menu burger quand actif */
 .burger-menu.active div:nth-child(1) {
@@ -103,7 +105,7 @@ body {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Affichage du menu burger et contenu en version mobile */
+/* Affichage du menu burger en version mobile */
 @media (max-width: 768px) {
     .burger-menu {
         display: block;
@@ -126,31 +128,6 @@ body {
 }
 
 /* Style des boutons flottants */
-
-#goToHomeBtn {
-    bottom: 20px;
-    right: 20px;
-    z-index: 1100;
-}
-
-#scrollToTopBtn {
-    bottom: 80px; /* Décalé vers le haut */
-    right: 20px;
-}
-
-#scrollToTopBtn, #goToHomeBtn {
-    position: fixed;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    font-size: 24px;
-    opacity: 0; /* Initialement caché */
-    transition: opacity 0.3s ease;
-    z-index: 1000; /* Pour s'assurer que les boutons sont au-dessus du contenu */
-}
-
 #floatingButtons {
     position: fixed;
     bottom: 20px;
@@ -158,11 +135,39 @@ body {
     display: flex;
     flex-direction: column; /* Les boutons s'empilent en colonne */
     gap: 10px; /* Espacement entre les boutons */
+    z-index: 1100; /* Assure la superposition */
 }
 
-
-
-/* Classe 'show' qui rend les boutons visibles */
-#scrollToTopBtn.show, #goToHomeBtn.show {
-    opacity: 1; /* Affiche les boutons */
+#goToHomeBtn, #scrollToTopBtn {
+    position: fixed;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0; /* Initialement caché */
+    transition: opacity 0.3s ease, transform 0.2s;
 }
+
+#goToHomeBtn {
+    bottom: 20px;
+    right: 20px;
+}
+
+#scrollToTopBtn {
+    bottom: 80px; /* Décalé vers le haut */
+    right: 20px;
+}
+
+    /* Animation au survol */
+    #goToHomeBtn:hover, #scrollToTopBtn:hover {
+        background-color: #555;
+        transform: scale(1.1);
+    }
+
+    /* Classe 'show' qui rend les boutons visibles */
+    #scrollToTopBtn.show, #goToHomeBtn.show {
+        opacity: 1;
+    }
