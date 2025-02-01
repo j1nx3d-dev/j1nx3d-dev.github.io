@@ -28,12 +28,11 @@ body {
         color: #FFFFFF;
     }
 
-/* Menu burger (affichage sur petit écran) */
 .burger-menu {
     display: none;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    bottom: 10px; /* Placer le menu en bas */
+    left: 20px; /* Garder la position à gauche */
     cursor: pointer;
     z-index: 1200; /* Assure la visibilité du menu */
 }
@@ -157,7 +156,7 @@ body {
 }
 
 #scrollToTopBtn {
-    bottom: 80px; /* Décalé vers le haut */
+    bottom: 120px; /* Décalé vers le haut */
     right: 20px;
 }
 
