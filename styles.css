@@ -126,6 +126,18 @@ body {
     margin: 0 auto;
 }
 
+/* Container video */
+.video-container {
+    max-width: 100%; /* La largeur maximale ne dépassera pas 100% de l'écran */
+    width: 100%; /* La largeur s'adaptera à 100% de l'écran */
+    height: auto; /* Laisse la hauteur s'adapter en fonction de la largeur */
+    display: block; /* Pour s'assurer que la vidéo est un bloc */
+    overflow: hidden; /* Pour éviter les débordements */
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+    text-align: center; /* Centre le contenu textuel à l'intérieur, si nécessaire */
+}
+
+
 /* Style des boutons flottants */
 #floatingButtons {
     position: fixed;
