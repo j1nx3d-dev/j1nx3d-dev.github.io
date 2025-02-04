@@ -148,6 +148,19 @@ body {
         height:auto; /* Laisse la hauteur s'adapter en fonction de la largeur */
     }
 
+.video-containerInside {
+    width: 80%; /* Adapte la largeur à 80% de l'écran */
+    height: auto; /* La hauteur s'ajuste automatiquement */
+    display: block; /* Pour s'assurer que la vidéo est un bloc */
+    margin: 0 auto; /* Centre la vidéo horizontalement */
+}
+
+    .video-containerInside iframe {
+        width: 100%; /* L'iframe s'adapte à la largeur du conteneur */
+        height: auto; /* Laisse la hauteur s'adapter en fonction de la largeur */
+        display: block; /* Pour s'assurer que la vidéo est un bloc */
+    }
+
 
 /* Style des boutons flottants */
 #floatingButtons {
