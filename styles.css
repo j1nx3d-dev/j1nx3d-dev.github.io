@@ -141,6 +141,13 @@ body {
     text-align: center; /* Centre le contenu textuel à l'intérieur, si nécessaire */
 }
 
+/* Ajoute ce style pour rendre responsive le contenu vidéo */
+    .video-container iframe,
+    .video-container video {
+        width: 100%;
+        height:auto; /* Laisse la hauteur s'adapter en fonction de la largeur */
+    }
+
 
 /* Style des boutons flottants */
 #floatingButtons {
