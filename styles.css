@@ -132,8 +132,8 @@ body {
 
 /* Container video */
 .video-container {
-    max-width: 85%; /* La largeur maximale ne dépassera pas 100% de l'écran */
-    width: 85%; /* La largeur s'adaptera à 100% de l'écran */
+    max-width: 100%; /* La largeur maximale ne dépassera pas 100% de l'écran */
+    width: 100%; /* La largeur s'adaptera à 100% de l'écran */
     height: auto; /* Laisse la hauteur s'adapter en fonction de la largeur */
     display: block; /* Pour s'assurer que la vidéo est un bloc */
     overflow: hidden; /* Pour éviter les débordements */
@@ -144,7 +144,7 @@ body {
 /* Ajoute ce style pour rendre responsive le contenu vidéo */
     .video-container iframe,
     .video-container video {
-        width: 100%;
+        width: 80%;
         height:auto; /* Laisse la hauteur s'adapter en fonction de la largeur */
     }
 
@@ -155,7 +155,7 @@ body {
     margin: 0 auto; /* Centre la vidéo horizontalement */
 }
 .video-description {
-    width: 85%; /* Adapte la largeur à 80% de l'écran */
+    width: 100%; /* Adapte la largeur à 80% de l'écran */
     height: auto; /* La hauteur s'ajuste automatiquement */
     display: block; /* Pour s'assurer que la vidéo est un bloc */
     margin: 0 auto; /* Centre la vidéo horizontalement */
