@@ -22,7 +22,7 @@ body {
     text-align: center;
     margin-bottom: 50px;
     position: relative;
-}
+   }
 
     .header h1 {
         color: #FFFFFF;
@@ -117,6 +117,10 @@ body {
     .nav-links-mobile.active {
         display: block;
     }
+}
+
+.top-header-cw {
+    text-align: center; /* Centre le contenu textuel à l'intérieur, si nécessaire */
 }
 
 /* Contenu principal */
