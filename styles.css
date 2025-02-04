@@ -132,8 +132,8 @@ body {
 
 /* Container video */
 .video-container {
-    max-width: 100%; /* La largeur maximale ne dépassera pas 100% de l'écran */
-    width: 100%; /* La largeur s'adaptera à 100% de l'écran */
+    max-width: 80%; /* La largeur maximale ne dépassera pas 100% de l'écran */
+    width: 80%; /* La largeur s'adaptera à 100% de l'écran */
     height: auto; /* Laisse la hauteur s'adapter en fonction de la largeur */
     display: block; /* Pour s'assurer que la vidéo est un bloc */
     overflow: hidden; /* Pour éviter les débordements */
@@ -144,7 +144,7 @@ body {
 /* Ajoute ce style pour rendre responsive le contenu vidéo */
     .video-container iframe,
     .video-container video {
-        width: 100%;
+        width: 80%;
         height:auto; /* Laisse la hauteur s'adapter en fonction de la largeur */
     }
 
